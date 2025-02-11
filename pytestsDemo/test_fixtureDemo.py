@@ -1,11 +1,12 @@
 import pytest
 
+@pytest.mark.usefixtures("setup")
+class TestExample:
+    def test_fixtureDemo(self):
+        print("i will execute steps in fixtureDemo method")
 
-@pytest.fixture()
-def setup():
-    print("i will be executing")
-    yield
-    print("Last executed")
+    def test_fixtureDemo1(self):
+        print("i will execute steps in fixtureDemo1 method")
 
-def test_fixtureDemo(setup):
-    print("i will execute steps in fixtureDemo method")
+    def test_fixtureDemo2(self):
+        print("i will execute steps in fixtureDemo2 method")
